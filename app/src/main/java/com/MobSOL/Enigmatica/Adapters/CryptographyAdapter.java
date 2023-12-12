@@ -3,6 +3,9 @@ package com.MobSOL.Enigmatica.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import com.MobSOL.Enigmatica.Models.Cryptography;
 import com.MobSOL.Enigmatica.R;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapter.CryptographyViewHolder> {
     Context context;
@@ -37,12 +41,19 @@ public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapte
     @Override
     public void onBindViewHolder(@NonNull CryptographyViewHolder holder, int position) {
         holder.cryptographyBg.setCardBackgroundColor(Color.parseColor(cryptographies.get(position).getBgColor()));
-
         holder.cryptographyImage.setBackgroundColor(Color.parseColor(cryptographies.get(position).getImageColor()));
         @SuppressLint("DiscouragedApi") int imageID = context.getResources().getIdentifier(cryptographies.get(position).getImage(), "drawable", context.getPackageName());
         holder.cryptographyImage.setImageResource(imageID);
 
+        if (Objects.equals(cryptographies.get(position).getQR(), "qr")){
+            @SuppressLint("DiscouragedApi") int QR_ID = context.getResources().getIdentifier(cryptographies.get(position).getQR(), "drawable", context.getPackageName());
+            @SuppressLint("DiscouragedApi") Drawable QR_Drawable = context.getResources().getDrawable(QR_ID);
+            holder.cryptographyQR.setForeground(QR_Drawable);
+        }
+        else  holder.cryptographyQR.setForeground(null);
+
         holder.cryptographyTittle.setText(cryptographies.get(position).getTittle());
+        holder.cryptographyTittle.setMovementMethod(LinkMovementMethod.getInstance());
         holder.cryptographyDescription.setText(cryptographies.get(position).getDescription());
     }
 
@@ -53,7 +64,7 @@ public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapte
 
     public static final class CryptographyViewHolder extends RecyclerView.ViewHolder{
 
-        CardView cryptographyBg;
+        CardView cryptographyBg, cryptographyQR;
         ImageView cryptographyImage;
         TextView cryptographyTittle, cryptographyDescription;
         public CryptographyViewHolder(@NonNull View itemView) {
@@ -61,6 +72,7 @@ public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapte
 
             cryptographyBg = itemView.findViewById(R.id.card_view);
             cryptographyImage = itemView.findViewById(R.id.Image);
+            cryptographyQR = itemView.findViewById(R.id.QR_CardView);
             cryptographyTittle = itemView.findViewById(R.id.Tittle);
             cryptographyDescription = itemView.findViewById(R.id.Description);
         }

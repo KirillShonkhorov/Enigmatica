@@ -2,15 +2,28 @@ package com.MobSOL.Enigmatica.Models;
 
 public class Cryptography {
     int ID;
-    String Image, Tittle, BgColor,ImageColor, Description;
+    String Image, QR;
+    String Tittle;
+    String BgColor;
+    String ImageColor;
+    String Description;
 
-    public Cryptography(int ID, String image, String tittle, String bgColor, String imageColor, String description) {
+    public Cryptography(int ID, String image, String qr, String tittle, String bgColor, String imageColor, String description) {
         this.ID = ID;
         this.Image = image;
+        this.QR = qr;
         this.Tittle = tittle;
         this.BgColor = bgColor;
         this.ImageColor = imageColor;
         this.Description = description;
+    }
+
+    public String getQR() {
+        return QR;
+    }
+
+    public void setQR(String QR) {
+        this.QR = QR;
     }
 
     public int getID() {
