@@ -2,10 +2,11 @@ package com.MobSOL.Enigmatica.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CryptographyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CryptographyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.cryptographyBg.setCardBackgroundColor(Color.parseColor(cryptographies.get(position).getBgColor()));
         holder.cryptographyImage.setBackgroundColor(Color.parseColor(cryptographies.get(position).getImageColor()));
         @SuppressLint("DiscouragedApi") int imageID = context.getResources().getIdentifier(cryptographies.get(position).getImage(), "drawable", context.getPackageName());
@@ -47,14 +48,28 @@ public class CryptographyAdapter extends RecyclerView.Adapter<CryptographyAdapte
 
         if (Objects.equals(cryptographies.get(position).getQR(), "qr")){
             @SuppressLint("DiscouragedApi") int QR_ID = context.getResources().getIdentifier(cryptographies.get(position).getQR(), "drawable", context.getPackageName());
-            @SuppressLint("DiscouragedApi") Drawable QR_Drawable = context.getResources().getDrawable(QR_ID);
+            @SuppressLint({"DiscouragedApi", "UseCompatLoadingForDrawables"}) Drawable QR_Drawable = context.getResources().getDrawable(QR_ID);
             holder.cryptographyQR.setForeground(QR_Drawable);
+
+            holder.cryptographyQR.setOnClickListener(v -> {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://github.com/KirillShonkhorov/Enigmatica/"));
+                context.startActivity(browserIntent);
+            });
         }
         else  holder.cryptographyQR.setForeground(null);
 
         holder.cryptographyTittle.setText(cryptographies.get(position).getTittle());
         holder.cryptographyTittle.setMovementMethod(LinkMovementMethod.getInstance());
+        holder.cryptographyTittle.setTextColor(Color.parseColor(cryptographies.get(position).getTittleColor()));
         holder.cryptographyDescription.setText(cryptographies.get(position).getDescription());
+        holder.cryptographyDescription.setTextColor(Color.parseColor(cryptographies.get(position).getDescriptionColor()));
+
+        holder.cryptographyDescription.setOnClickListener(v -> {
+            if(cryptographies.get(position).getID() != 7){
+                Intent intent = new Intent(context, cryptographies.get(position).getaClass());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

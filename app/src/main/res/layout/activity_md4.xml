@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_crypt"
+    tools:context=".Cryptographies.MD4Activity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:contentDescription="@string/todo"
+            android:id="@+id/Main_LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="20dp"
+                android:contentDescription="@string/todo"
+                android:id="@+id/Tittle_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/md4_Bg"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/Tittle_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Tittle_Image"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@color/md4_ImageBg"
+                        android:paddingVertical="10dp"
+                        android:contentDescription="@string/todo"
+                        app:srcCompat="@drawable/md4"/>
+
+                    <TextView
+                        android:id="@+id/Tittle_Tittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:gravity="center"
+                        android:text="@string/md4_Tittle"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="20sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/Instruction_Tittle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:gravity="center"
+                        android:text="@string/Instruction_Tittle"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="20sp"
+                        tools:ignore="TextViewEdits">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/Instruction_Desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:gravity="center"
+                        android:text="@string/MS_Instruction_Desc"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="14sp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginHorizontal="20dp"
+                android:contentDescription="@string/todo"
+                android:id="@+id/Function_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/md4_Bg"
+                app:cardCornerRadius="40dp"
+                app:contentPadding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/Function_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/InputHash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:text="@string/Input_Hash_string"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="16sp"
+                        tools:ignore="TextSizeCheck">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/HashEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints=""
+                        android:background="@drawable/edittext_style"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:hint="@string/Hint_Hash_string"
+                        android:imeActionId="1"
+                        android:imeOptions="actionGo"
+                        android:inputType="text|textMultiLine"
+                        android:padding="5dp"
+                        android:singleLine="false"
+                        android:textColor="@color/md4_TextColor"
+                        android:textColorHint="#37474F"
+                        android:textSize="14sp"
+                        tools:ignore="TextSizeCheck">
+
+                    </EditText>
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:text="@string/Get_Link"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="14dp"
+                        tools:ignore="SpUsage,TextSizeCheck,TextViewEdits" />
+
+                    <Button
+                        android:id="@+id/Hash_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_stroke_black95_press_white"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:text="@string/Hash"
+                        android:textAllCaps="false"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="14sp"
+                        tools:ignore="TextSizeCheck" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:visibility="gone"
+                android:layout_margin="20dp"
+                android:contentDescription="@string/todo"
+                android:id="@+id/Output_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/md4_Bg"
+                app:cardCornerRadius="40dp"
+                app:contentPadding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/Output_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Output_Hash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:text="@string/Output_Hash_string"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="16sp"
+                        tools:ignore="TextSizeCheck">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/Output_HashEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edittext_style"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/montserrat_alternates"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textMultiLine"
+                        android:padding="5dp"
+                        android:singleLine="false"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="14sp"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:autofillHints="">
+
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/Copy_Output_hash_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/btn_stroke_black95_press_white"
+                        android:fontFamily="@font/montserrat_alternates_bold"
+                        android:text="@string/Copy"
+                        android:textAllCaps="false"
+                        android:textColor="@color/md4_TextColor"
+                        android:textSize="14sp"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/Link_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/todo"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Output_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
+                            android:fontFamily="@font/montserrat_alternates_bold"
+                            android:text="@string/Output_Link"
+                            android:textColor="@color/md4_TextColor"
+                            android:textSize="16sp"
+                            tools:ignore="TextSizeCheck">
+
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/Output_Link"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edittext_style"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/montserrat_alternates"
+                            android:imeOptions="actionNext"
+                            android:inputType="text|textMultiLine"
+                            android:padding="5dp"
+                            android:singleLine="false"
+                            android:textColor="@color/md4_TextColor"
+                            android:textSize="14sp"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                            android:autofillHints="">
+
+                        </EditText>
+
+                        <Button
+                            android:id="@+id/Copy_Output_link_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/btn_stroke_black95_press_white"
+                            android:fontFamily="@font/montserrat_alternates_bold"
+                            android:text="@string/Copy"
+                            android:textAllCaps="false"
+                            android:textColor="@color/md4_TextColor"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

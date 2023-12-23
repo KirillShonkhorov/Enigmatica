@@ -4,38 +4,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeActivity"
-    android:background="#FF99c5f1">
+    tools:context=".Activities.HomeActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:contentDescription="@string/todo"
         android:layout_height="match_parent"
-        android:background="@drawable/rain_bg1"
+        android:background="@drawable/bg_home"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/Version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:rotationY="-180"
+            android:text="@string/Version"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/Version">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RV_Cryptography"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="20dp"
                 android:contentDescription="@string/todo"
-                android:foregroundGravity="center"
                 android:rotationY="-180"
                 android:scrollbars="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -6,5 +6,23 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="black95">#95000000</color>
+    <color name="black15">#25000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white85">#85ffffff</color>
+    <color name="white50">#50ffffff</color>
+    <color name="white25">#25ffffff</color>
+    <color name="white15">#15ffffff</color>
+    <color name="md4_Bg">#6DBAE2</color>
+    <color name="md4_ImageBg">#8BC9FF</color>
+    <color name="md4_TextColor">#010A44</color>
+    <color name="md5_Bg">#BF3730</color>
+    <color name="md5_TextColor">#F7FF8B</color>
+    <color name="sha1_Bg">#86B32D</color>
+    <color name="sha1_ImageBg">#C9F76F</color>
+    <color name="sha2_Bg">#B537F8</color>
+    <color name="sha2_TextColor">#BBFFEF</color>
+    <color name="highway_Bg">#FF9640</color>
+    <color name="highway_ImageBg">#FFB87E</color>
+    <color name="highway_TextColor">#542309</color>
 </resources>
