@@ -1,2 +1,3 @@
-# Enigmatica
-Cryptography application for Android. My course porject.
+# Enigmatica 0.1.0
+Android-приложение для криптографических данных. Приложение может выдавать пять типов хеш-функций, а также хеш-значение и хеш-ключ. Этот проект можно представить как курсовую работу по HCI. Приложение имеет функцию для работы API.
+![Untitled](https://github.com/KirillShonkhorov/Enigmatica/assets/102126185/9b6d37be-a0f0-4e9c-98df-272c04d9799d)
